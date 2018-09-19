@@ -1,0 +1,16 @@
+var app = require('../app');
+var http = require('http');
+var cfg = require('../config');
+
+var port = cfg.port;
+app.set('port', port);
+
+var server = http.createServer(app);
+server.listen(port);
+
+server.on('error', (error) => {
+	console.log('http server error', error);
+});
+server.on('listening', () => {
+	console.log('http server listening on port ' + port);
+});

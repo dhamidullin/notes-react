@@ -1,0 +1,96 @@
+.title {
+  font-size: 105%;
+  font-weight: bold;
+}
+.body,
+.buttons {
+  font-size: 90%;
+}
+.title,
+.body {
+  white-space: nowrap;
+  overflow: hidden;
+}
+.buttons {
+  user-select: none;
+  opacity: 0;
+}
+.buttons i {
+  display: inline-block;
+  padding: 4px 10px;
+  margin-right: 10px;
+  color: #626262;
+  line-height: 120%;
+  position: relative;
+}
+.buttons i span {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  top: 110%;
+  transform: translateX(-50%);
+  background: #2e2e2e;
+  padding: 4px 6px;
+  border-radius: 6px;
+  color: white;
+  white-space: nowrap;
+  opacity: 0;
+  text-align: center;
+  overflow: hidden;
+}
+.buttons i:hover {
+  color: black;
+}
+.buttons i:hover span {
+  transition-delay: all 30ms;
+  transition: all 100ms;
+  opacity: 1;
+  width: initial;
+}
+div.note-container {
+  padding: 16px 0;
+  display: inline-block;
+  width: 60%;
+  min-width: 600px;
+  text-align: left;
+}
+div.note-container * {
+  cursor: default;
+}
+div.note-container .note {
+  display: inline-block;
+  width: 100%;
+  border-radius: 2px;
+  border-bottom-right-radius: 20%;
+  background: white;
+  border: 1px solid lightgray;
+  box-shadow: 0px 1px 3px 2px rgba(0, 0, 0, 0.53);
+  padding: 0.4vw 0.6vw;
+}
+div.note-container .note:hover .buttons {
+  transition: all 100ms;
+  opacity: 1;
+}
+div.note-container.expand {
+  z-index: 3;
+}
+div.note-container.expand * {
+  cursor: initial;
+}
+div.note-container.expand .note {
+  box-shadow: 3px 4px 5px 3px rgba(0, 0, 0, 0.53);
+  position: relative;
+  left: -10px;
+  top: -5px;
+}
+div.note-container.expand .note .title,
+div.note-container.expand .note .body {
+  white-space: initial;
+}
+div.note-container.expand .note .title:focus,
+div.note-container.expand .note .body:focus {
+  outline: none;
+}
+div.note-container.expand .note .buttons {
+  opacity: 1;
+}
